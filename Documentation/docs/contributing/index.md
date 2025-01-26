@@ -17,7 +17,7 @@ Setup
 Before you begin, perform initial setup:
 
   1. [Register for a GitHub](https://github.com/join) account.
-  2. Optionally download our [one page PDF desk reference](https://raw.githubusercontent.com/InsightSoftwareConsortium/ITK/master/Documentation/GitCheatSheet.pdf).
+  2. Optionally download our [one page PDF desk reference](https://raw.githubusercontent.com/InsightSoftwareConsortium/ITK/master/Documentation/docs/contributing/GitCheatSheet.pdf).
   3. Follow the [download instructions] to create a local ITK clone:
 
 ```bash
@@ -396,10 +396,7 @@ branches:
   * `release`: Maintenance of latest release
   * `release-3.20`: Maintenance of the ITKv3 series
   * `release-4.13`: Maintenance of the ITKv4 series
-  * `5.4`: Maintenance of the ITKv5 series.
-    - The naming convention changed to support ReadTheDocs rendering of
-      versions on docs.itk.org
-    - Future releases, `6.0`, `6.1`, etc. should use this convention.
+  * `release-5.4`: Maintenance of the ITKv5 series.
   * `nightly-master`: Follows master, updated at 01:00 UTC for nightly dashboard build consistency.
   * `hooks`: Local commit hooks (place in `.git/hooks`)
   * `dashboard`: Dashboard script (setup a CDash client)

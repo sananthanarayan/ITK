@@ -166,7 +166,7 @@ template <typename TImage1, typename TImage2>
 struct MakeJoin
 {
   using FunctorType = JoinFunctor<typename TImage1::PixelType, typename TImage2::PixelType>;
-  using ImageType = Image<typename FunctorType::JoinType, TImage1 ::ImageDimension>;
+  using ImageType = Image<typename FunctorType::JoinType, TImage1::ImageDimension>;
 };
 } // namespace Functor
 
@@ -232,15 +232,11 @@ public:
   /** \see LightObject::GetNameOfClass() */
   itkOverrideGetNameOfClassMacro(JoinImageFilter);
 
-#ifdef ITK_USE_CONCEPT_CHECKING
-  // Begin concept checking
   itkConceptMacro(Input1HasPixelTraitsCheck, (Concept::HasPixelTraits<typename TInputImage1::PixelType>));
   itkConceptMacro(Input2HasPixelTraitsCheck, (Concept::HasPixelTraits<typename TInputImage2::PixelType>));
   itkConceptMacro(Input1Input2HasJoinTraitsCheck,
                   (Concept::HasJoinTraits<typename PixelTraits<typename TInputImage1::PixelType>::ValueType,
                                           typename PixelTraits<typename TInputImage2::PixelType>::ValueType>));
-  // End concept checking
-#endif
 
 protected:
   JoinImageFilter() { Superclass::SetFunctor(FunctorType()); }
